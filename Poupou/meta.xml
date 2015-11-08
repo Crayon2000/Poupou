@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+    <name>Poupou</name>
+    <coder>Crayon</coder>
+    <version>1.0.0</version>
+    <release_date>20100108000000</release_date>
+    <short_description>Homebrew for preschooler</short_description> 
+    <long_description>You simply touch anything and Thomas the train will change position and size. A choo-choo sound will also be emitted.
+The Thomas the train theme song will loop in the background until it drives you crazy.
+To exit the game simply press the HOME button.
+
+Programmer: Crayon</long_description>
+</app>
