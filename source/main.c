@@ -29,9 +29,9 @@ int main(int argc, char **argv) {
 
     // Load image
     GRRLIB_texImg *ForeGroundTex = GRRLIB_LoadTexture(foreground);
-    f32 posx = rmode->fbWidth/2 - ForeGroundTex->w/2,
-        posy = rmode->efbHeight/2- ForeGroundTex->h/2,
-        scale = 1;
+    f32 posx = rmode->fbWidth/2 - ForeGroundTex->w/2;
+    f32 posy = rmode->efbHeight/2- ForeGroundTex->h/2;
+    f32 scale = 1;
 
     srand(time(NULL));
 
@@ -57,8 +57,8 @@ int main(int argc, char **argv) {
                 (void *)sound_16bit_mono_44100_raw, sound_16bit_mono_44100_raw_size, 155, 155, NULL);
             color = (rand() & 0xFFFFFF) <<8 | 0xFF;
             scale = (0.7 * ((float)rand() / RAND_MAX)) + 0.7;
-            posx =  ((rmode->fbWidth  - (ForeGroundTex->w * scale)) * (float)rand() / RAND_MAX);
-            posy =  ((rmode->efbHeight- (ForeGroundTex->h * scale)) * (float)rand() / RAND_MAX);
+            posx = ((rmode->fbWidth  - (ForeGroundTex->w * scale)) * (float)rand() / RAND_MAX);
+            posy = ((rmode->efbHeight- (ForeGroundTex->h * scale)) * (float)rand() / RAND_MAX);
         }
 
         /*if(!MP3Player_IsPlaying()) {
