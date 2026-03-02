@@ -16,7 +16,6 @@
 //#include "music_mp3.h"
 
 int main(int argc, char **argv) {
-    u32 wpaddown, paddown;
     u32 color = 0x00000000;
 
     GRRLIB_Init();
@@ -28,7 +27,7 @@ int main(int argc, char **argv) {
     ASND_Pause(0);
 
     // Load image
-    GRRLIB_texImg *ForeGroundTex = GRRLIB_LoadTexture(foreground);
+    GRRLIB_texImg *ForeGroundTex = GRRLIB_LoadTexturePNG(foreground);
     f32 posx = rmode->fbWidth/2 - ForeGroundTex->w/2;
     f32 posy = rmode->efbHeight/2- ForeGroundTex->h/2;
     f32 scale = 1;
@@ -38,11 +37,11 @@ int main(int argc, char **argv) {
     ASND_SetInfiniteVoice(0, VOICE_MONO_16BIT, 44100, 0,
         (void *)music_raw, music_raw_size, 155, 155);
 
-    while(1) {
+    while(SYS_MainLoop()) {
         WPAD_ScanPads();
         PAD_ScanPads();
-        wpaddown = WPAD_ButtonsDown(0);
-        paddown = PAD_ButtonsDown(0);
+        const u32 wpaddown = WPAD_ButtonsDown(0);
+        const u32 paddown = PAD_ButtonsDown(0);
         GRRLIB_FillScreen(color);
 
         GRRLIB_DrawImg(posx, posy, ForeGroundTex, 0, scale, scale, 0xFFFFFFFF);
